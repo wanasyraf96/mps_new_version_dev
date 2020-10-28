@@ -9,6 +9,7 @@ import { getToken, removeUserSession, setUserSession } from './Utils/Common';
 import Login from './Login';
 import Dashboard from './Dashboard';
 import Home from './Home';
+import Register from './Register';
 
 function App() {
 
@@ -47,6 +48,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={Home} />
               <PublicRoute path="/login" component={Login} />
+              <PublicRoute path="/daftar" component={Register} />
               <PrivateRoute path="/dashboard" component={Dashboard} />
             </Switch>
           </div>

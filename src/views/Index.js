@@ -1,5 +1,6 @@
 /*eslint-disable*/
 import React from "react";
+import Bckg1 from "../assets/img/pattern_react.png";
 import { Link } from "react-router-dom";
 
 import IndexNavbar from "../components/Navbars/IndexNavbar.js";
@@ -14,7 +15,7 @@ export default function Index() {
           <div className="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
             <div className="pt-32 sm:pt-0">
               <h2 className="font-semibold text-4xl text-gray-700">
-                Notus React - A beautiful extension for Tailwind CSS.
+                MyMPS - Sebuah aplikasi bayar cukai atas talian anda.
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-gray-600">
                 Notus React is Free and Open Source. It does not change or add
@@ -31,18 +32,16 @@ export default function Index() {
               </p>
               <div className="mt-12">
                 <a
-                  href="https://www.creative-tim.com/learning-lab/tailwind/react/overview/notus?ref=nr-index"
-                  target="_blank"
-                  className="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-blue-500 active:bg-blue-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
+                  href="/daftar"
+                  className="get-started text-white font-bold px-3 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-blue-500 active:bg-blue-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
                 >
-                  Get started
+                  Pendaftaran
                 </a>
                 <a
-                  href="https://github.com/creativetimofficial/notus-react?ref=nr-index"
-                  className="github-star ml-1 text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-gray-800 active:bg-gray-700 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
-                  target="_blank"
+                  href="/bayar"
+                  className="github-star ml-1 text-white font-bold px-3 py-4 rounded outline-none focus:outline-none mb-1 bg-gray-800 active:bg-gray-700 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
                 >
-                  Github Star
+                  Bayar Cukai Ekspress
                 </a>
               </div>
             </div>
@@ -51,7 +50,7 @@ export default function Index() {
 
         <img
           className="absolute top-0 b-auto right-0 pt-16 sm:w-6/12 -mt-48 sm:mt-0 w-10/12 max-h-860px"
-          src="../assets/img/pattern_react.png"
+          src={Bckg1}
         />
       </section>
 
@@ -175,7 +174,7 @@ export default function Index() {
         </div>
 
         <div className="container mx-auto overflow-hidden pb-20">
-          <div className="flex flex-wrap items-center">
+          {/* <div className="flex flex-wrap items-center">
             <div className="w-full md:w-4/12 px-12 md:px-4 ml-auto mr-auto mt-48">
               <div className="text-gray-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white">
                 <i className="fas fa-sitemap text-xl"></i>
@@ -258,9 +257,9 @@ export default function Index() {
                 />
               </div>
             </div>
-          </div>
+          </div> */}
 
-          <div className="flex flex-wrap items-center pt-32">
+          {/* <div className="flex flex-wrap items-center pt-32">
             <div className="w-full md:w-6/12 px-4 mr-auto ml-auto mt-32">
               <div className="justify-center flex flex-wrap relative">
                 <div className="my-4 w-full lg:w-6/12 px-4">
@@ -411,10 +410,10 @@ export default function Index() {
                 <i className="fa fa-angle-double-right ml-1 leading-relaxed"></i>
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
 
-        <div className="container mx-auto px-4 pb-32 pt-48">
+        {/* <div className="container mx-auto px-4 pb-32 pt-48">
           <div className="items-center flex flex-wrap">
             <div className="w-full md:w-5/12 ml-auto px-12 md:px-4">
               <div className="md:pr-12">
@@ -489,9 +488,9 @@ export default function Index() {
               />
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="justify-center text-center flex flex-wrap mt-24">
+        {/* <div className="justify-center text-center flex flex-wrap mt-24">
           <div className="w-full md:w-6/12 px-12 md:px-4">
             <h2 className="font-semibold text-4xl">Beautiful Example Pages</h2>
             <p className="text-lg leading-relaxed mt-4 mb-4 text-gray-600">
@@ -500,7 +499,7 @@ export default function Index() {
               start playing with them.
             </p>
           </div>
-        </div>
+        </div> */}
       </section>
 
       <section className="block relative z-1 bg-gray-700">
@@ -508,7 +507,7 @@ export default function Index() {
           <div className="justify-center flex flex-wrap">
             <div className="w-full lg:w-12/12 px-4  -mt-24">
               <div className="flex flex-wrap">
-                <div className="w-full lg:w-4/12 px-4">
+                {/* <div className="w-full lg:w-4/12 px-4">
                   <h5 className="text-xl font-semibold pb-4 text-center">
                     Login Page
                   </h5>
@@ -551,7 +550,7 @@ export default function Index() {
                       />
                     </div>
                   </Link>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
