@@ -1,0 +1,7 @@
+@tailwind base;
+
+/* Here we can add any custom overrides */
+
+@tailwind utilities;
+
+/* Here we can add our own utilities or custom CSS */

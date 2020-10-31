@@ -88,7 +88,7 @@ function Login(props){
                 {
                     setUserSession(result.data[0].TOKEN, result.data[0].USERNAME);
 
-                    swal("Bejaya!", "Login Berjaya!", "success");
+                    //swal("Bejaya!", "Login Berjaya!", "success");
                     props.history.push('/dashboard');
                 }
                 
@@ -108,29 +108,54 @@ function Login(props){
 
     }
 
-    const handleNumber = () => {
-        //console.log(username.value);
-        
-    }
-
     return (
         <div className="bg-gray">
             <IndexNavbar fixed />
-            {/* Login <br /><br /> */}
-            {/* <div>
-                Username <br />
-                <input type="text" {...username} />
-            </div>
-            <div style={{ marginTop: 10 }}>
-                Password <br />
-                <input type="password" {...password} />
-            </div>
-            {error && <><small style={{ color: 'red' }}>{error}</small><br /></>}<br />
-            <input type="button" value={loading ? 'Loading...' : 'Login'} onClick={handleLogin} disabled={loading} /><br /> */}
-        <section className="py-20 bg-gray-700 overflow-hidden h-100" style={{height: "20vh"}}>
+        <section className="py-20 px-5 relative" style={{background: "rgb(34,81,122)", background: "linear-gradient(90deg, rgba(34,81,122,1) 0%, rgba(27,147,171,1) 100%)"}}>
+        <div class="min-h-screen flex items-center justify-center  px-4 sm:px-6">
+            <div class="max-w-md w-full" style={{marginTop: "-100px"}}>
+                <div>
+                <img class="mx-auto w-auto" src={logo1} alt="mymps" style={{height: "120px"}}/>
+                <h2 class="mt-6 text-center text-xl leading-9 font-extrabold text-white">
+                    Login Akaun
+                </h2>
+                </div>
+                <form class="mt-8" action="#" method="POST">
+                <input type="hidden" name="remember" value="true" />
+                <div class="rounded-md shadow-sm">
+                    <div>
+                    <input aria-label="Email" {...username} name="email" type="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Email" />
+                    </div>
+                    <div class="-mt-px">
+                    <input aria-label="Password" {...password} name="password" type="password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Kata Laluan" />
+                    </div>
+                </div>
 
+                <div class="mt-6 flex items-center justify-between">
+                    <div class="flex items-center">
+                    <input id="remember_me" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out" />
+                    <label for="remember_me" class="ml-2 block text-sm leading-5 text-gray-300">
+                        Remember me
+                    </label>
+                    </div>
+
+                    <div class="text-sm leading-5">
+                    <a href="#" class="font-medium text-gray-100 hover:text-gray-200 focus:outline-none focus:underline transition ease-in-out duration-150">
+                        Terlupa kata laluan?
+                    </a>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <button type="button" onClick={handleLogin} class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
+                        {loading ? 'Loading...' : 'Login'}
+                    </button>
+                </div>
+                </form>
+            </div>
+        </div>
         </section>
-        <section className="pb-16 bg-gray-300 relative pt-32">
+        {/* <section className="pb-16 bg-gray-300 relative pt-32">
             <div className="container mx-auto">
                 <div className="flex flex-wrap justify-center bg-white shadow-2xl rounded-lg -mt-64 py-16 px-10 relative z-10">
                     <div className="w-full text-center lg:w-8/12">
@@ -138,11 +163,11 @@ function Login(props){
                         <img className="mx-auto" src={logo1} style={{height:"150px", width:"150px"}}></img>
                     </p>
                     <Heading size={700} marginTop="default">Login MyMPS</Heading>
-                    {/* <p className="text-gray-600 text-lg leading-relaxed mt-4 mb-4">
+                    <p className="text-gray-600 text-lg leading-relaxed mt-4 mb-4">
                         Cause if you do, it can be yours now. Hit the buttons below to
                         navigate to get the Free version for your next project. Build a
                         new web app or give an old project a new look!
-                    </p> */}
+                    </p>
                     <div className="sm:block flex flex-col mt-10">
                         <div className="text-left p-5">
                         <TextInputField
@@ -190,7 +215,7 @@ function Login(props){
                     </div>
                 </div>
             </div>
-        </section>
+        </section> */}
         <Footer />
         </div>
     )

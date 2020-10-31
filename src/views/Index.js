@@ -38,7 +38,7 @@ export default function Index() {
                   Pendaftaran
                 </a>
                 <a
-                  href="/bayar"
+                  href="/bayarancukai"
                   className="github-star ml-1 text-white font-bold px-3 py-4 rounded outline-none focus:outline-none mb-1 bg-gray-800 active:bg-gray-700 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
                 >
                   Bayar Cukai Ekspress
