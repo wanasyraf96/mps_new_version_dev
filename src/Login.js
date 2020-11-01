@@ -71,27 +71,42 @@ function Login(props){
 
             var urlAPI1 = 'https://mymps.corrad.my/int/api_generator.php?api_name=api_login';
             var urlAPI2 = 'https://api.corrad.my/api/API-login';
+            var urlAPI3 = 'https://apisim.mps.gov.my/api/mymps/akaunbyic?nokp=' + username.value;
 
-            fetch(urlAPI1, requestOptions)
+            fetch(urlAPI3)
             .then(response => response.json())
             .then(result => {
 
-                //console.log(result);
+                for(var i = 0; i < result.length; i++){
+                    console.log(result[i].NOAKAUN);
+                }
                 setLoading(false);
 
-                if(result.status == "unsuccess")
+                // if(result.status == "unsuccess")
+                // {
+                //     console.log("Wrong credentials. Please try again!");
+                //     swal("Opss!", "Sila pastikan kata nama dan kata laluan anda sah", "error");
+                // }
+                // else if(result.status == "success")
+                // {
+                //     setUserSession(result.data[0].TOKEN, result.data[0].USERNAME);
+
+                //     //swal("Bejaya!", "Login Berjaya!", "success");
+                //     props.history.push('/dashboard');
+                // }
+                
+                if(!result)
                 {
                     console.log("Wrong credentials. Please try again!");
                     swal("Opss!", "Sila pastikan kata nama dan kata laluan anda sah", "error");
                 }
-                else if(result.status == "success")
+                else if(result)
                 {
-                    setUserSession(result.data[0].TOKEN, result.data[0].USERNAME);
+                    setUserSession(btoa(result), result[0].NAMA_PEMILIK, username.value);
 
                     //swal("Bejaya!", "Login Berjaya!", "success");
                     props.history.push('/dashboard');
                 }
-                
 
             })
             .catch(error => {
@@ -99,7 +114,7 @@ function Login(props){
                 console.log(error);
                 swal("Opss!", "Something went wrong. Please contact your administrator!", "error")
                 .then((value) => {
-                    props.history.push('/');
+                    //props.history.push('/');
                 })
 
             });
@@ -120,14 +135,15 @@ function Login(props){
                     Login Akaun
                 </h2>
                 </div>
-                <form class="mt-8" action="#" method="POST">
+                <form class="mt-8">
                 <input type="hidden" name="remember" value="true" />
                 <div class="rounded-md shadow-sm">
                     <div>
-                    <input aria-label="Email" {...username} name="email" type="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Email" />
+                    <input aria-label="Email" {...username} name="email" type="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Kad Pengenalan" />
                     </div>
+                    <br />
                     <div class="-mt-px">
-                    <input aria-label="Password" {...password} name="password" type="password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Kata Laluan" />
+                    <input aria-label="Password" {...password} name="password" type="password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Kata Laluan" />
                     </div>
                 </div>
 
@@ -135,7 +151,7 @@ function Login(props){
                     <div class="flex items-center">
                     <input id="remember_me" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out" />
                     <label for="remember_me" class="ml-2 block text-sm leading-5 text-gray-300">
-                        Remember me
+                        Ingat saya
                     </label>
                     </div>
 

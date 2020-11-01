@@ -4,7 +4,7 @@ import axios from "axios";
 
 import PrivateRoute from "./Utils/PrivateRoute";
 import PublicRoute from "./Utils/PublicRoute";
-import { getToken, removeUserSession, setUserSession } from "./Utils/Common";
+import { getToken, getNOKP, getUser, removeUserSession, setUserSession } from "./Utils/Common";
 
 import Login from "./Login";
 import Dashboard from "./Dashboard";
@@ -19,21 +19,23 @@ function App() {
   const [authLoading, setAuthLoading] = useState(true);
 
   useEffect(() => {
-    const token = getToken();
-    if (!token) {
+    const nokp = getNOKP();
+    if (!nokp) {
       return;
     }
 
-    axios
-      .get(`https://apisim.mps.gov.my/api/mymps/akaunbyic?nokp=930420145231`)
-      .then((response) => {
-        setUserSession(response.data[0].NOAKAUN, response.data[0].NAMA_PEMILIK);
-        setAuthLoading(false);
-      })
-      .catch((error) => {
-        removeUserSession();
-        setAuthLoading(false);
-      });
+    fetch(`https://apisim.mps.gov.my/api/mymps/akaunbyic?nokp=` + nokp)
+    .then(response => response.json())
+    .then((result) => {
+      //setUserSession(response.data[0].NOAKAUN, response.data[0].NAMA_PEMILIK);
+      setUserSession(btoa(result), result[0].NAMA_PEMILIK, nokp);
+      setAuthLoading(false);
+    })
+    .catch((error) => {
+      console.log(error)
+      removeUserSession();
+      //setAuthLoading(false);
+    });
   }, []);
 
   if (authLoading && getToken()) {
