@@ -18,6 +18,8 @@ function Register(props) {
     nokp: ''
   });
 
+  // const [error, formIsValid] = setState(false);
+
   const handleChange = (e) => {
     setForm({
       ...form,
@@ -127,6 +129,7 @@ function Register(props) {
 }
 
 // const handleValidation = e =>{
-  
+//   let formIsValid = true;
+//   let error = {};
 // }
 export default Register;
