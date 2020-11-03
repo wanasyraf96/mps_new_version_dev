@@ -9,7 +9,6 @@ import swal from "sweetalert";
 
 function Register(props) {
 
-  // const [error, setError]     = useState(null);
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     username: '',
